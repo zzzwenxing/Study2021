@@ -1,4 +1,52 @@
 # String Pool
+
+## equals 方法
+### equals所在位置：
+在Object类当中，而Object是所有类的父类，包含在jdk里面，但并不适合绝大多数场景，通常需要重写
+``` java
+public boolean equals(Object obj) {
+        return (this == obj);
+    }
+ // 可以看出Object类中equals方法是用==判断对象引用是否指向同一内存地址。
+```
+
+String类型比较不同对象内容是否相同，应该用equals，因为==用于比较引用类型和比较基本数据类型时具有不同的功能。  
+String类很特殊 ，String类对equals方法进行了重写，如下：
+``` java
+  public boolean equals(Object anObject) {
+        if (this == anObject) {
+            return true;
+        }
+        if (anObject instanceof String) {
+            String anotherString = (String)anObject;
+            int n = value.length;
+            if (n == anotherString.value.length) {
+                char v1[] = value;
+                char v2[] = anotherString.value;
+                int i = 0;
+                while (n-- != 0) {
+                    if (v1[i] != v2[i])
+                        return false;
+                    i++;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+ //可以看出在String类中equals方法不仅可以用==判断对象的内存地址是否相等，相等则返回true。
+ //如果前面的判断不成立，接着判断括号内的对象上是否是String类型，接着判断两个字符串对象的的长度是否相等，最后判断内容是否相等，如果相等则返回true。
+```
+### 非String类
+例如StringBuffer类 没有重写equals方法，所以不比较内容。==和equals都是比较的内存地址
+``` java
+StringBuffer stringBuffer = new StringBuffer("aaa");
+StringBuffer stringBuffer2 = new StringBuffer("aaa");
+System.out.println(stringBuffer == stringBuffer2); // false
+System.out.println(stringBuffer.equals(stringBuffer2)); // false
+```
+
+
 ## new String("abc")
 ### 场景一
 使用这种方式一共会创建两个字符串对象,（前提是 String Pool 中还没有 "abc" 字符串对象）。   
