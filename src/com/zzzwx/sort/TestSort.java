@@ -16,11 +16,17 @@ public class TestSort {
         SelectionSort selectionSort = new SelectionSort();
         int[] selectSortArr = selectionSort.sort(arr1);
 
+        InsertSort insertSort = new InsertSort();
+        int [] insertSortArr = insertSort.sort(arr1);
+
         for (int a:bubbleSortArr){
             System.out.println("冒泡排序"+a);
         }
         for (int a:selectSortArr){
             System.out.println("选择排序"+a);
+        }
+        for (int a:insertSortArr){
+            System.out.println("插入排序"+a);
         }
     }
 }
