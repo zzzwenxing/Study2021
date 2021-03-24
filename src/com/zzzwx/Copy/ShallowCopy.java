@@ -25,6 +25,9 @@ public class ShallowCopy {
         System.out.println("-------------拷贝后-------------");
         System.out.println(student2.getName());
         System.out.println(student2.getAge());
+        student2.setAge(11);
+        System.out.println(student2.getAge()+"修改后的学生2");
+        System.out.println(student.getAge()+"未修改的学生");
         System.out.println(student2.getTeacher().getName());
         System.out.println(student2.getTeacher().getAge());
 
