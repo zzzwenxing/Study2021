@@ -21,8 +21,17 @@ public class StringPool {
         System.out.println(s1.equals(s6));
 
         String a = new String("1");
+        int aaa = a.hashCode();
+        System.out.println(aaa);
         a.intern();
         String b = "1";
         System.out.println(a == b);
+        Integer integer = new Integer(10);
+        integer.intValue();
+        int k =8;
+        Integer i = 10;
+        int n = i;
+
+
     }
 }

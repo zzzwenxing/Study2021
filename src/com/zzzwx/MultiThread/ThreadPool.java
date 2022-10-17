@@ -1,8 +1,6 @@
 package com.zzzwx.MultiThread;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class ThreadPool {
     public static void main(String[] args) {

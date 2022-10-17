@@ -13,14 +13,14 @@ import java.nio.channels.FileChannel;
  */
 public class ListAllFiles {
     public static void main(String[] args) throws IOException {
-        /*File file = new File("G:\\Study\\2019学习\\Java-Interview");
+        File file = new File("/Users/zhuwenxing/IdeaProjects/Study2021/");
         listFiles(file);
-        listFiles(new File("G:\\Study\\2019学习"));*/
+        //listFiles(new File("G:\\Study\\2019学习"));
 
 //        copyFile("G:\\test\\1.txt","G:\\test\\2.txt");
-        readFileContent("G:\\test\\1.txt");
+        //readFileContent("G:\\test\\1.txt");
 
-        fastCopy("G:\\test\\cbcc-cbspas.zip","G:\\test\\cbcc-cbspasbak.zip");
+        //fastCopy("G:\\test\\cbcc-cbspas.zip","G:\\test\\cbcc-cbspasbak.zip");
 
     }
 
