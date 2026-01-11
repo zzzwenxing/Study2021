@@ -1,4 +1,4 @@
-package com.zzzwx.Leetcode;
+package com.zzzwx.laluladong.ListNode;
 
 
 /**
